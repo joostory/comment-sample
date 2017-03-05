@@ -8,7 +8,7 @@ class CommentList extends Component {
     return (
       <div>
         {hasMore &&
-          <button onClick={onLoadMore}>more comment</button>
+          <button className="btn-more" onClick={onLoadMore}>more comment</button>
         }
         {comments.map(item =>
           <Comment key={item.id} comment={item} />

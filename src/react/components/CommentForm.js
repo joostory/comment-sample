@@ -35,8 +35,9 @@ class CommentForm extends Component {
   render() {
     const { ready } = this.state
     return (
-      <form onSubmit={this.handleAddComment.bind(this)}>
-        <input type='text' ref='message' onChange={this.handleMessageChange.bind(this)} />
+      <form className="form" onSubmit={this.handleAddComment.bind(this)}>
+	  	<label>message</label>
+        <input className="text" type='text' ref='message' onChange={this.handleMessageChange.bind(this)} />
         <button type='submit' disabled={!ready}>submit</button>
       </form>
     )

@@ -5,8 +5,8 @@ class Comment extends Component {
     const { comment } = this.props
     return (
       <div className="comment">
-        <div>{comment.created.toString()}</div>
-        <div>{comment.message}</div>
+        <div className="info">{comment.created.toString()}</div>
+        <div className="message">{comment.message}</div>
       </div>
     )
   }

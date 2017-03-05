@@ -12,6 +12,7 @@ class App extends Component {
         {id: 5, message:'Hello', created: new Date(new Date().getTime() - 600000)},
         {id: 6, message:'Hi', created: new Date(new Date().getTime() - 500000)},
       ],
+      count: 6,
       hasMoreComments: true
     }
   }
@@ -30,17 +31,19 @@ class App extends Component {
   }
 
   handleAdd(message) {
-    const { comments } = this.state
+    const { comments, count } = this.state
     let newId = comments[comments.length - 1].id + 1
     this.setState({
-      comments: comments.concat({id: newId, message: message, created: new Date()})
+      comments: comments.concat({id: newId, message: message, created: new Date()}),
+      count: count + 1
     })
   }
 
   render() {
-    const { comments, hasMoreComments } = this.state
+    const { comments, count, hasMoreComments } = this.state
     return (
-      <div>
+      <div className="app">
+        <div>{count} Comments</div>
         <CommentList comments={comments} hasMore={hasMoreComments} onLoadMore={this.handleLoadMore.bind(this)} />
         <CommentForm onAdd={this.handleAdd.bind(this)} />
       </div>

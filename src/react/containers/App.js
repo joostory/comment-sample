@@ -9,8 +9,8 @@ class App extends Component {
     super(props, context)
     this.state = {
       comments: [
-        {id: 5, message:'Hello', created: new Date(new Date().getTime() - 600000)},
-        {id: 6, message:'Hi', created: new Date(new Date().getTime() - 500000)},
+        {id: 5, message:'Comment 5', created: new Date(new Date().getTime() - 600000)},
+        {id: 6, message:'Comment 6', created: new Date(new Date().getTime() - 500000)},
       ],
       count: 6,
       hasMoreComments: true

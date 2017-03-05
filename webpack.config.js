@@ -31,10 +31,15 @@ module.exports = {
 				use: ['babel-loader'],
 				exclude: /node_modules/,
 				include: __dirname
+			},
+			{
+				test: /\.vue$/,
+				use: ['vue-loader']
 			}
 		]
 	},
   resolve: {
+  	extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
     }

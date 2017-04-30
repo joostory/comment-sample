@@ -8,8 +8,14 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname, 'docs/assets'),
-    publicPath: '/assets/',
 		filename: '[name].js'
+	},
+	devServer: {
+    contentBase: [
+      path.resolve(__dirname, "docs"),
+      path.resolve(__dirname, ".")
+    ],
+    publicPath:  "/assets/"
 	},
 	plugins: process.env.NODE_ENV !== "production" ? [] : [
 		new webpack.optimize.UglifyJsPlugin({

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --content-base ./docs"
+    "build:angular": "tsc -p src/angular -w",
+    "start": "concurrently 'webpack-dev-server' 'npm run build:angular'"
   },
   "repository": {
     "type": "git",
@@ -37,11 +38,27 @@
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.1",
+
+    "concurrently": "^3.2.0",
+    "typescript": "~2.1.0"
   },
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "vue": "^2.2.1"
+    "vue": "^2.2.1",
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
+
+    "systemjs": "0.19.40",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.8.4"
   }
 }
